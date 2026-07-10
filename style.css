@@ -111,6 +111,11 @@ a {
   margin-left: 0;
   margin-right: auto;
   text-align: left;
+  transform: translateY(28px);
+}
+
+.hero .eyebrow {
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.9);
 }
 
 .eyebrow {
