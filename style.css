@@ -108,8 +108,7 @@ a {
   position: relative;
   z-index: 2;
   max-width: 560px;
-  margin-left: auto;
-  margin-right: clamp(18px, 3vw, 70px);
+  margin-left: 0;
   text-align: left;
 }
 
