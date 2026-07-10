@@ -109,7 +109,7 @@ a {
   z-index: 2;
   max-width: 690px;
   margin-left: auto;
-  text-align: left;
+  text-align: right;
 }
 
 .eyebrow {
@@ -158,6 +158,10 @@ h1 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 28px;
+}
+
+.hero-actions {
+  justify-content: flex-end;
 }
 
 .button {
