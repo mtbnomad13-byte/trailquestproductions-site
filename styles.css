@@ -234,3 +234,43 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 @media(max-width:720px){
   .why-item{border-bottom-color:#454545}
 }
+
+/* Final desktop sizing correction: use the available laptop width and preserve hero/footer image composition. */
+@media(min-width:981px){
+  .header-inner,
+  .container,
+  .footer-inner{
+    max-width:1920px;
+  }
+
+  .header-inner{
+    padding-left:48px;
+    padding-right:48px;
+  }
+
+  .container{
+    padding-left:48px;
+    padding-right:48px;
+  }
+
+  .footer-inner{
+    padding-left:48px;
+    padding-right:48px;
+  }
+
+  /* All three uploaded hero images are 2:1. This keeps the section at that composition
+     instead of forcing a short banner that crops the sky/riders vertically. */
+  .hero{
+    min-height:max(610px,50vw);
+    background-size:cover;
+    background-position:center center;
+  }
+
+  /* The shared footer image is 2048x740 (2.7676:1). Matching that ratio prevents the
+     previous short CTA banner from zooming/cropping the image vertically. */
+  .cta{
+    min-height:max(330px,36.13vw);
+    background-size:cover;
+    background-position:center center;
+  }
+}
