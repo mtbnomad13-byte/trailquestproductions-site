@@ -1,0 +1,29 @@
+TRAIL QUEST PRODUCTIONS — FINAL CONTACT/VIDEO UPDATE
+
+Upload these files to the ROOT of the existing GitHub repository and replace the files with the same names:
+
+index.html
+ride-ready.html
+adventure-tourism.html
+styles.css
+site.js
+
+Add these two new files:
+
+contact.html
+thanks.html
+
+NO ASSET FILES NEED TO BE UPLOADED AGAIN.
+
+After GitHub commits the files, wait for the Cloudflare Pages deployment to show a green check.
+Then hard-refresh https://trailquestproductions.com with Cmd + Shift + R.
+
+FORM ACTIVATION — ONE TIME ONLY
+1. Open https://trailquestproductions.com/contact.html
+2. Fill out the form yourself and submit it once.
+3. FormSubmit will email MTBNomad13@gmail.com asking you to confirm/activate the form.
+4. Click the activation/confirmation link in that email.
+5. Return to the contact page and submit one more test form.
+6. Confirm the second test arrives at MTBNomad13@gmail.com.
+
+After that, no FormSubmit account or routine website update is required for the form to keep sending submissions.
