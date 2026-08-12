@@ -1,29 +1,38 @@
-TRAIL QUEST PRODUCTIONS — FINAL CONTACT/VIDEO UPDATE
+TRAIL QUEST PRODUCTIONS — FINAL WEBSITE UPDATE
 
-Upload these files to the ROOT of the existing GitHub repository and replace the files with the same names:
+Upload/replace these files at the ROOT of the existing GitHub repository:
+- index.html
+- ride-ready.html
+- adventure-tourism.html
+- contact.html
+- thanks.html
+- styles.css
+- site.js
 
-index.html
-ride-ready.html
-adventure-tourism.html
-styles.css
-site.js
+Then open the existing assets folder in GitHub and upload these TWO new files:
+- revelstoke-video-card.png
+- curt-gowdy-video-card.png
 
-Add these two new files:
+Do not delete or re-upload the other existing assets.
 
-contact.html
-thanks.html
+Commit directly to main. Wait for the Cloudflare Pages deployment to show a green check, then hard refresh https://trailquestproductions.com with Cmd+Shift+R.
 
-NO ASSET FILES NEED TO BE UPLOADED AGAIN.
+FINAL CONTACT FORM BEHAVIOR
+- Submissions go to MTBNomad13@gmail.com through FormSubmit.
+- Required: Name, Organization, Email, Best phone number, Interested In.
+- Project description is optional.
+- Ride Ready quote buttons preselect Mountain Bike Destination Package.
+- Adventure Tourism quote buttons preselect Adventure Tourism Package.
+- The form identifies itself as https://trailquestproductions.com/contact.html and the site redirects www traffic to the non-www hostname so FormSubmit sees one canonical form URL.
+- reCAPTCHA remains enabled for spam protection.
+- Successful submissions redirect to https://trailquestproductions.com/thanks.html.
 
-After GitHub commits the files, wait for the Cloudflare Pages deployment to show a green check.
-Then hard-refresh https://trailquestproductions.com with Cmd + Shift + R.
+VIDEO CARDS
+- Revelstoke uses revelstoke-video-card.png (clean website still).
+- Curt Gowdy uses curt-gowdy-video-card.png (clean website still).
+- Whanganui, Abel Tasman, and Wilkin River Jets continue using their current YouTube thumbnails because those do not have the duplicate-text problem.
+- All video cards still link to the correct YouTube videos.
 
-FORM ACTIVATION — ONE TIME ONLY
-1. Open https://trailquestproductions.com/contact.html
-2. Fill out the form yourself and submit it once.
-3. FormSubmit will email MTBNomad13@gmail.com asking you to confirm/activate the form.
-4. Click the activation/confirmation link in that email.
-5. Return to the contact page and submit one more test form.
-6. Confirm the second test arrives at MTBNomad13@gmail.com.
-
-After that, no FormSubmit account or routine website update is required for the form to keep sending submissions.
+RIDE READY COPY
+- The two hook paragraphs are now the same font size and weight.
+- An orange divider appears beneath the headline.
