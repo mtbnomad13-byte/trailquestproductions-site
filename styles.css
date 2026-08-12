@@ -387,7 +387,19 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 
 /* Final production fixes: brighter Home hero and in-site AJAX contact submission. */
 .home-hero:before{
-  background:linear-gradient(90deg,rgba(0,0,0,.40) 0%,rgba(0,0,0,.22) 34%,rgba(0,0,0,.04) 64%,rgba(0,0,0,0) 100%);
+  /* Keep the copy readable without dimming the destination image.
+     The left text column stays intentionally dark, then the overlay
+     falls away quickly before the rider/right half of the image. */
+  background:linear-gradient(90deg,
+    rgba(0,0,0,.72) 0%,
+    rgba(0,0,0,.68) 30%,
+    rgba(0,0,0,.60) 38%,
+    rgba(0,0,0,.36) 46%,
+    rgba(0,0,0,.12) 53%,
+    rgba(0,0,0,.02) 58%,
+    rgba(0,0,0,0) 62%,
+    rgba(0,0,0,0) 100%
+  );
 }
 .home-hero .hero-copy h1,
 .home-hero .hero-copy p{
@@ -396,9 +408,40 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 .contact-submit[disabled]{opacity:.68;cursor:wait}
 .form-status{grid-column:1/-1;margin:0;min-height:22px;font-size:14px;color:#d4d4d4}
 .form-status.error{color:#ff9b61;font-weight:700}
-@media(max-width:720px){
+/* Responsive Home hero composition. Desktop keeps the copy side dark and the rider side clear.
+   Tablets/phones deliberately bias the crop toward Kelly instead of simply centering the 2:1 image. */
+@media(max-width:980px){
+  .home-hero{
+    background-position:68% center;
+  }
   .home-hero:before{
-    background:linear-gradient(90deg,rgba(0,0,0,.50) 0%,rgba(0,0,0,.30) 56%,rgba(0,0,0,.10) 100%);
+    background:linear-gradient(90deg,
+      rgba(0,0,0,.78) 0%,
+      rgba(0,0,0,.74) 34%,
+      rgba(0,0,0,.62) 48%,
+      rgba(0,0,0,.38) 62%,
+      rgba(0,0,0,.16) 76%,
+      rgba(0,0,0,.04) 88%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+}
+@media(max-width:720px){
+  .home-hero{
+    /* A tall phone viewport can show only part of the 2:1 source. This crop keeps Kelly
+       and the Moab setting visible while leaving usable dark image behind the copy. */
+    background-position:72% center;
+  }
+  .home-hero:before{
+    background:linear-gradient(90deg,
+      rgba(0,0,0,.82) 0%,
+      rgba(0,0,0,.78) 38%,
+      rgba(0,0,0,.64) 56%,
+      rgba(0,0,0,.38) 72%,
+      rgba(0,0,0,.16) 86%,
+      rgba(0,0,0,.03) 96%,
+      rgba(0,0,0,0) 100%
+    );
   }
 }
 
