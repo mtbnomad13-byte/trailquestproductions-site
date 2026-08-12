@@ -1,6 +1,6 @@
 TRAIL QUEST PRODUCTIONS — FINAL WEBSITE UPDATE
 
-Upload/replace these files at the ROOT of the existing GitHub repository:
+Upload/replace these files in the ROOT of your GitHub repository:
 - index.html
 - ride-ready.html
 - adventure-tourism.html
@@ -9,30 +9,25 @@ Upload/replace these files at the ROOT of the existing GitHub repository:
 - styles.css
 - site.js
 
-Then open the existing assets folder in GitHub and upload these TWO new files:
+Inside the existing assets folder, upload/replace:
 - revelstoke-video-card.png
 - curt-gowdy-video-card.png
 
-Do not delete or re-upload the other existing assets.
+You do NOT need to re-upload the rest of the assets folder.
 
-Commit directly to main. Wait for the Cloudflare Pages deployment to show a green check, then hard refresh https://trailquestproductions.com with Cmd+Shift+R.
+Then:
+1. Commit directly to main.
+2. Wait for the Cloudflare deployment green check.
+3. Hard refresh https://trailquestproductions.com with Cmd + Shift + R.
+4. Test one contact submission.
 
-FINAL CONTACT FORM BEHAVIOR
-- Submissions go to MTBNomad13@gmail.com through FormSubmit.
-- Required: Name, Organization, Email, Best phone number, Interested In.
-- Project description is optional.
-- Ride Ready quote buttons preselect Mountain Bike Destination Package.
-- Adventure Tourism quote buttons preselect Adventure Tourism Package.
-- The form identifies itself as https://trailquestproductions.com/contact.html and the site redirects www traffic to the non-www hostname so FormSubmit sees one canonical form URL.
-- reCAPTCHA remains enabled for spam protection.
-- Successful submissions redirect to https://trailquestproductions.com/thanks.html.
-
-VIDEO CARDS
-- Revelstoke uses revelstoke-video-card.png (clean website still).
-- Curt Gowdy uses curt-gowdy-video-card.png (clean website still).
-- Whanganui, Abel Tasman, and Wilkin River Jets continue using their current YouTube thumbnails because those do not have the duplicate-text problem.
-- All video cards still link to the correct YouTube videos.
-
-RIDE READY COPY
-- The two hook paragraphs are now the same font size and weight.
-- An orange divider appears beneath the headline.
+Included in this package:
+- Responsive Ride Ready pitch headline (no hard-coded desktop line break)
+- Full orange divider below the Ride Ready pitch headline
+- Two Ride Ready pitch paragraphs at the same, larger responsive font size/weight
+- Brighter Home hero overlay
+- AJAX FormSubmit contact form that redirects to the Trail Quest thank-you page on success
+- Normal POST thank-you redirect included as a fallback
+- Required phone number and project interest fields
+- Clean Revelstoke and Curt Gowdy website video-card images
+- Working YouTube links and existing Adventure Tourism YouTube thumbnails

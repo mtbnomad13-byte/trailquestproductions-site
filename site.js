@@ -1,4 +1,4 @@
-// Keep one canonical hostname so the contact form is always submitted from the same site URL.
+// Keep one canonical hostname so links and form submissions use one consistent site URL.
 if (window.location.hostname === 'www.trailquestproductions.com') {
   const target = `https://trailquestproductions.com${window.location.pathname}${window.location.search}${window.location.hash}`;
   window.location.replace(target);
@@ -21,4 +21,69 @@ const projectOptions = {
 if (projectOptions[project]) {
   const option = document.querySelector(`input[name="Interested In"][data-project="${projectOptions[project]}"]`);
   if (option) option.checked = true;
+}
+
+// Submit the contact form through FormSubmit's official AJAX endpoint so visitors never
+// leave Trail Quest Productions for a FormSubmit-branded success or CAPTCHA page.
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  const submitButton = contactForm.querySelector('.contact-submit');
+  const status = contactForm.querySelector('.form-status');
+  const originalButtonText = submitButton ? submitButton.textContent : '';
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    // Preserve normal browser validation for required fields/email/phone inputs.
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    if (status) {
+      status.textContent = '';
+      status.classList.remove('error');
+    }
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending…';
+    }
+
+    try {
+      const formData = new FormData(contactForm);
+      const payload = {};
+      for (const [key, value] of formData.entries()) payload[key] = value;
+
+      const endpoint = contactForm.dataset.ajaxEndpoint;
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      let result = {};
+      try { result = await response.json(); } catch (_) {}
+
+      const accepted = response.ok && (result.success === true || result.success === 'true' || result.success === undefined);
+      if (!accepted) {
+        const message = result.message || 'We could not send your message. Please try again.';
+        throw new Error(message);
+      }
+
+      window.location.assign('thanks.html');
+    } catch (error) {
+      if (status) {
+        status.textContent = 'Your message did not send. Please try again, or email MTBNomad13@gmail.com.';
+        status.classList.add('error');
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+      console.error('Contact form submission failed:', error);
+    }
+  });
 }
