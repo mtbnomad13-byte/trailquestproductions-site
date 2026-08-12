@@ -275,22 +275,7 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
   }
 }
 
-/* Final review updates: stronger Ride Ready payoff, clean YouTube cards, and contact form. */
-.pitch-copy .pitch-divider{
-  width:92px;
-  height:4px;
-  background:var(--orange);
-  margin:22px 0 26px;
-}
-.pitch-copy p{
-  font-size:clamp(19px,1.35vw,23px);
-  line-height:1.5;
-  font-weight:400;
-  color:#d8d8d8;
-  margin:0;
-}
-.pitch-copy p + p{margin-top:22px}
-
+/* Final review updates: clean YouTube cards and contact form. */
 /* Keep YouTube-provided thumbnail text untouched; all site captions live below the 16:9 thumbnail. */
 .video-card{
   aspect-ratio:auto;
@@ -389,8 +374,6 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
   .contact-intro p{max-width:none}
 }
 @media(max-width:720px){
-  .pitch-copy p{font-size:18px}
-  .pitch-copy p + p{margin-top:18px}
   .video-caption{min-height:0}
   .video-card h3{font-size:27px}
   .contact-section{padding:42px 0 54px}
@@ -404,7 +387,7 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 
 /* Final production fixes: brighter Home hero and in-site AJAX contact submission. */
 .home-hero:before{
-  background:linear-gradient(90deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.48) 34%,rgba(0,0,0,.10) 66%,rgba(0,0,0,0) 100%);
+  background:linear-gradient(90deg,rgba(0,0,0,.40) 0%,rgba(0,0,0,.22) 34%,rgba(0,0,0,.04) 64%,rgba(0,0,0,0) 100%);
 }
 .home-hero .hero-copy h1,
 .home-hero .hero-copy p{
@@ -415,41 +398,41 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 .form-status.error{color:#ff9b61;font-weight:700}
 @media(max-width:720px){
   .home-hero:before{
-    background:linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.44) 56%,rgba(0,0,0,.18) 100%);
+    background:linear-gradient(90deg,rgba(0,0,0,.50) 0%,rgba(0,0,0,.30) 56%,rgba(0,0,0,.10) 100%);
   }
 }
 
-/* FINAL Ride Ready pitch hierarchy — responsive headline, full orange divider, equal emphasis body copy. */
+/* FINAL Ride Ready pitch hierarchy — one source of truth. */
 .pitch-copy h2{
   font-size:clamp(40px,3.3vw,54px);
   line-height:1.02;
   text-wrap:balance;
 }
 .pitch-copy .pitch-divider{
-  width:100%;
-  max-width:760px;
+  width:88%;
+  max-width:none;
   height:4px;
   background:var(--orange);
-  margin:24px 0 30px;
+  margin:30px 0 46px;
 }
 .pitch-copy p{
   margin:0;
   color:#dedede;
-  font-size:clamp(22px,1.55vw,27px);
-  line-height:1.45;
+  font-size:clamp(24px,1.7vw,29px);
+  line-height:1.46;
   font-weight:500;
 }
 .pitch-copy p + p{
-  margin-top:30px;
+  margin-top:36px;
 }
 @media(max-width:980px){
   .pitch-copy h2{font-size:clamp(38px,5vw,48px)}
-  .pitch-copy .pitch-divider{max-width:100%;margin:22px 0 26px}
-  .pitch-copy p{font-size:clamp(21px,2.5vw,24px)}
+  .pitch-copy .pitch-divider{width:90%;margin:26px 0 38px}
+  .pitch-copy p{font-size:clamp(22px,2.8vw,26px)}
 }
 @media(max-width:720px){
   .pitch-copy h2{font-size:clamp(34px,9vw,42px);text-wrap:balance}
-  .pitch-copy .pitch-divider{width:100%;height:3px;margin:20px 0 24px}
-  .pitch-copy p{font-size:clamp(19px,5.2vw,22px);line-height:1.48;font-weight:500}
-  .pitch-copy p + p{margin-top:24px}
+  .pitch-copy .pitch-divider{width:92%;height:3px;margin:22px 0 32px}
+  .pitch-copy p{font-size:clamp(20px,5.4vw,23px);line-height:1.48;font-weight:500}
+  .pitch-copy p + p{margin-top:28px}
 }
