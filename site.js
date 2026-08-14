@@ -87,3 +87,30 @@ if (contactForm) {
     }
   });
 }
+
+// Revelstoke and Curt Gowdy use Trail Quest's clean custom poster images.
+// Clicking either poster swaps only that 16:9 image area for the embedded YouTube player.
+document.querySelectorAll('.video-card[data-video-id]').forEach((card) => {
+  card.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    const thumb = card.querySelector('.video-thumb');
+    const videoId = card.dataset.videoId;
+    if (!thumb || !videoId || thumb.classList.contains('is-playing')) return;
+
+    thumb.classList.add('is-playing');
+    card.classList.add('video-playing');
+    card.setAttribute('aria-label', 'Video playing');
+
+    const iframe = document.createElement('iframe');
+    iframe.className = 'video-embed';
+    iframe.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0&playsinline=1`;
+    iframe.title = card.querySelector('h3')?.textContent?.trim() || 'Trail Quest Productions video';
+    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+    iframe.allowFullscreen = true;
+
+    thumb.style.backgroundImage = 'none';
+    thumb.appendChild(iframe);
+  });
+});
