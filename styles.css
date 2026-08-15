@@ -510,74 +510,6 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 }
 .direct-video-card .video-caption{min-height:106px}
 
-/* Social examples deliberately stay no larger than one main 3-column portfolio card.
-   The row is bottom-aligned so the 16:9 and 9:16 cards finish on the same baseline. */
-.social-work-section{padding-top:42px}
-.social-video-grid{
-  --main-card-width:calc((100% - 36px)/3);
-  display:flex;
-  justify-content:center;
-  align-items:flex-end;
-  gap:18px;
-  width:100%;
-  margin:0 auto;
-}
-.social-video-card{
-  flex:none;
-}
-.social-horizontal{
-  width:var(--main-card-width);
-  max-width:560px;
-}
-.social-vertical{
-  width:calc(var(--main-card-width) * .34);
-  max-width:200px;
-}
-.social-video-card .video-caption{
-  min-height:76px;
-  padding:14px 16px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.social-video-card .video-caption h3{
-  margin:0;
-  font-size:clamp(22px,1.65vw,29px);
-  line-height:1.06;
-}
-.vertical-frame{aspect-ratio:9/16}
-
-@media(max-width:980px) and (min-width:721px){
-  .social-video-grid{
-    --main-card-width:calc((100% - 18px)/2);
-  }
-  .social-horizontal{max-width:520px}
-  .social-vertical{max-width:190px}
-}
-@media(max-width:720px){
-  .social-work-section{padding-top:24px}
-  .social-video-grid{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:24px;
-  }
-  .social-horizontal{
-    width:100%;
-    max-width:none;
-  }
-  .social-vertical{
-    width:min(58%,240px);
-    max-width:240px;
-  }
-  .social-video-card .video-caption{
-    min-height:68px;
-  }
-  .direct-video-card .video-caption{min-height:0}
-}
-
-
 /* FINAL portfolio player treatment — one uniform preview on every video card.
    YouTube itself is not loaded until click, so the poster shows no channel title,
    avatar, or "Watch on YouTube" overlay. */
@@ -655,63 +587,6 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
 }
 
 
-/* August 14 final social-card correction.
-   Both social examples use the SAME outer module size. The 9:16 reel is centered
-   inside a 16:9 media stage, so neither card sticks above or below the other. */
-.social-video-grid{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,560px));
-  justify-content:center;
-  align-items:stretch;
-  gap:24px;
-  width:100%;
-  max-width:1144px;
-  margin:0 auto;
-}
-.social-video-card,
-.social-horizontal,
-.social-vertical{
-  width:100%;
-  max-width:560px;
-  display:grid;
-  grid-template-rows:auto 1fr;
-  align-self:stretch;
-}
-.social-video-card .video-thumb,
-.social-video-card .video-thumb.vertical-video-thumb{
-  width:100%;
-  aspect-ratio:16/9;
-  background-color:#050505;
-}
-.social-video-card.social-horizontal .video-thumb{
-  background-size:cover,cover,cover;
-  background-position:center,center,center;
-}
-.social-video-card.social-vertical .video-thumb.vertical-video-thumb{
-  /* Keep the vertical reel vertical, centered inside the same 16:9 rectangle. */
-  background-size:auto 100%,auto 100%,cover;
-  background-position:center,center,center;
-  background-repeat:no-repeat;
-}
-.social-video-card .video-caption{
-  min-height:86px;
-  padding:14px 16px 16px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-}
-.social-video-card .video-caption h3{
-  margin:0;
-  font-size:clamp(22px,1.55vw,29px);
-  line-height:1.08;
-}
-/* When the vertical Short starts playing, keep the iframe inside the same 16:9 stage.
-   YouTube letterboxes the 9:16 video within that stage instead of changing card height. */
-.social-video-card.social-vertical .video-thumb.is-playing{
-  background:#000;
-}
-
 /* Footer social icons are real links, not decorative characters. */
 .site-footer .socials{
   display:flex;
@@ -739,19 +614,92 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
   outline:none;
 }
 
+/* Social & Promotional Cutdowns — FINAL layout.
+   Both examples use the SAME outer card and SAME 16:9 media stage.
+   The 16:9 teaser fills its stage. The 9:16 reel is centered inside the
+   identical stage with intentional black dead space on both sides. */
+.social-work-section{
+  padding-top:42px;
+}
+.social-video-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,560px));
+  justify-content:center;
+  align-items:stretch;
+  gap:24px;
+  width:100%;
+  max-width:1144px;
+  margin:0 auto;
+}
+.social-video-card{
+  width:100%;
+  max-width:560px;
+  display:flex;
+  flex-direction:column;
+  align-self:stretch;
+  overflow:hidden;
+}
+.social-media-stage{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#050505;
+  overflow:hidden;
+  flex:none;
+}
+.social-horizontal .social-media-stage > .video-thumb{
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  flex:1 1 auto;
+  background-size:cover,cover,cover;
+  background-position:center,center,center;
+}
+.social-vertical-shell{
+  position:relative;
+  height:100%;
+  aspect-ratio:9/16;
+  flex:none;
+  overflow:hidden;
+}
+.social-vertical-shell > .video-thumb.vertical-video-thumb{
+  width:100%;
+  height:100%;
+  aspect-ratio:auto;
+  background-size:cover,cover,cover;
+  background-position:center,center,center;
+  background-repeat:no-repeat;
+}
+.social-video-card .video-caption{
+  min-height:86px;
+  padding:14px 16px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  flex:1 0 86px;
+}
+.social-video-card .video-caption h3{
+  margin:0;
+  font-size:clamp(22px,1.55vw,29px);
+  line-height:1.08;
+}
 @media(max-width:980px){
   .social-video-grid{
     grid-template-columns:repeat(2,minmax(0,1fr));
     max-width:none;
     gap:18px;
   }
-  .social-video-card,
-  .social-horizontal,
-  .social-vertical{
+  .social-video-card{
     max-width:none;
   }
 }
 @media(max-width:720px){
+  .social-work-section{
+    padding-top:24px;
+  }
   .social-video-grid{
     grid-template-columns:1fr;
     gap:24px;
@@ -761,5 +709,7 @@ h1{font-size:76px;line-height:.98;font-weight:800;text-shadow:0 2px 0 rgba(0,0,0
   }
   .social-video-card .video-caption{
     min-height:72px;
+    flex-basis:72px;
   }
 }
+
