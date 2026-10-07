@@ -1,0 +1,50 @@
+/* Scoped additions preserve the existing site's header, photographs and form. */
+.rr-section,.rr-intro,.ai-section,.rr-final{border-top:0;padding:40px 0}
+.rr-section .section-title h2,.ai-section .section-title h2{font-size:clamp(28px,3.1vw,40px);line-height:1.1}
+.rr-intro>.container>h2{font-size:clamp(32px,3.5vw,46px);line-height:1.08;max-width:1100px}
+.eyebrow{font-size:14px;line-height:1.4}
+.rr-lead{font-size:20px;line-height:1.55;max-width:1050px;margin:16px 0 0}
+.rr-package{border:2px solid var(--orange);background:#151a17;border-radius:7px;margin-top:42px;padding:30px}
+.rr-package h2{font-size:32px;line-height:1.15}
+.rr-package ul{list-style:none;padding:0;margin:24px 0 0;display:grid;grid-template-columns:1fr 1fr;column-gap:42px}
+.rr-package li{position:relative;border-top:1px solid #39413c;padding:18px 0 18px 24px;font-size:19px;line-height:1.35;text-transform:uppercase;font-weight:800}
+.rr-package li:before{content:'';width:10px;height:10px;border-radius:50%;background:var(--orange);position:absolute;left:0;top:25px}
+.rr-package .highlight{color:#ff861e}
+.rr-features{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.rr-features article{border:1px solid #39413c;background:#151a17;border-radius:7px;overflow:hidden}
+.rr-features article:last-child{border-color:var(--orange)}
+.rr-features img{width:100%;aspect-ratio:1.35;object-fit:cover}
+.rr-features article>div{padding:18px}
+.rr-features h3{font-size:22px;line-height:1.15}
+.rr-features p{color:#c9cec9;font-size:16px;line-height:1.55;margin:12px 0 6px}
+.rr-engine{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.rr-engine article{display:flex;flex-direction:column;border:1px solid #39413c;background:#151a17;border-radius:7px;padding:24px}
+.rr-engine .eyebrow{margin:0 0 12px}
+.rr-engine h3{font-size:25px;line-height:1.12}
+.rr-engine article>p:not(.eyebrow){font-size:17px;line-height:1.6;color:#c9cec9;margin:20px 0 28px}
+.rr-engine strong{margin-top:auto;border-top:1px solid #39413c;padding-top:18px;font-size:14px;text-transform:uppercase}
+.rr-journey{display:flex;justify-content:center;align-items:center;gap:28px;flex-wrap:wrap;padding:25px;border:2px solid var(--orange);border-radius:7px;color:#ff861e;margin-top:20px;font-size:24px;text-transform:uppercase;font-weight:800}
+.rr-promo{margin-top:22px}.rr-promo summary{cursor:pointer;font-size:17px;font-weight:700;padding:12px 0}.rr-promo .social-video-grid{margin-top:20px}
+.ai-section>.container>.eyebrow{margin:0 0 14px}
+.ai-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:stretch}
+.ai-explanation{padding:28px;background:#151a17;border:1px solid #39413c;border-radius:7px}
+.ai-explanation h3{font-size:27px;line-height:1.15}.ai-explanation h4{font-size:18px;margin:24px 0 12px}
+.ai-explanation p,.ai-explanation li{font-size:17px;line-height:1.6}
+.ai-explanation>p{color:#d2d6d2}.ai-explanation ul{padding-left:22px;margin:0}.ai-explanation li{margin-bottom:9px}.ai-explanation li::marker{color:var(--orange)}
+.ai-explanation .ai-handoff{border-top:1px solid #39413c;padding-top:20px;margin-bottom:0}.ai-handoff strong{color:#ff861e}
+.ai-sample{background:#f2f1ec;border:1px solid #d7d7cf;color:#20241f;padding:30px;border-radius:7px}
+.ai-sample .sample-label{font-size:14px;color:#62665f;font-weight:700;margin:0 0 22px}
+.ai-sample h3{color:#171b17;font-size:30px;line-height:1.12}
+.ai-sample h4{font-family:Arial,sans-serif;font-size:19px;line-height:1.4;color:#171b17;margin:26px 0 10px}
+.ai-sample p{font-size:18px;line-height:1.65;margin:14px 0}.ai-sample .sample-rating{font-size:16px;font-weight:400}
+.ai-sample .sample-credit{font-size:14px;line-height:1.5;color:#62665f;border-top:1px solid #cccfc5;padding-top:18px;margin-top:26px}
+.rr-why{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;border:1px solid #39413c;border-left:5px solid var(--orange);padding:28px;background:#151a17;border-radius:4px}
+.rr-why h3{font-size:25px;line-height:1.12}.rr-why p{margin:0;font-size:17px;line-height:1.6;color:#c9cec9}
+.rr-credentials{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:18px}.rr-credentials>div{background:#151a17;border:1px solid #39413c;border-radius:5px;padding:20px}.rr-credentials h3{color:#ff861e;font-size:24px}.rr-credentials p{font-size:14px;line-height:1.5;margin:12px 0 0;text-transform:uppercase;font-weight:700}
+.rr-final-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;border:1px solid #39413c;border-radius:7px;background:#151a17;padding:30px}.rr-final h2{font-size:30px;line-height:1.1}.rr-final p{font-size:17px}.rr-final .btn{flex-shrink:0}
+.home-ai .container{display:grid;grid-template-columns:1fr auto;gap:45px;align-items:center}.home-ai h2{font-size:36px;line-height:1.1}.home-ai p:not(.eyebrow){font-size:19px;line-height:1.6;max-width:770px}.home-ai-links{display:grid;gap:14px}.home-ai-links .btn{font-size:18px;white-space:normal;height:auto;min-height:54px;padding:14px 20px}
+.adventure-deliverables .info-card{padding:26px 18px}.adventure-deliverables h3{font-size:24px}
+:focus-visible{outline:3px solid #ff861e;outline-offset:5px}
+@media(max-width:900px){.rr-features,.rr-credentials{grid-template-columns:repeat(2,minmax(0,1fr))}.ai-layout{grid-template-columns:1fr}.rr-engine{gap:12px}.rr-engine article{padding:20px}.home-ai .container{grid-template-columns:1fr;gap:15px}.home-ai-links{display:flex;flex-wrap:wrap}.rr-why{grid-template-columns:1fr}.adventure-deliverables{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.rr-section,.rr-intro,.ai-section,.rr-final{padding:30px 0}.rr-package{padding:22px;margin-top:30px}.rr-package ul{grid-template-columns:1fr;margin-top:18px}.rr-package li{font-size:18px}.rr-package h2{font-size:29px}.rr-features,.rr-engine,.rr-credentials,.adventure-deliverables{grid-template-columns:1fr}.rr-features img{aspect-ratio:1.7}.rr-journey{gap:12px;padding:20px 12px;font-size:16px}.ai-explanation,.ai-sample{padding:24px}.ai-sample h3{font-size:27px}.rr-final-inner{display:block;padding:25px}.rr-final .btn{margin-top:10px}.rr-lead{font-size:18px}.home-ai h2{font-size:31px}}
+@media(max-width:600px){.cta h2{font-size:clamp(30px,8vw,42px);overflow-wrap:break-word}}
